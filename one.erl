@@ -13,7 +13,7 @@
 -ifdef(TEST).
 -include_lib("eunit/include/eunit.hrl").
 -endif.
--compile([debug_info, export_all]).
+-export([captcha/1]).
 
 -spec captcha(unicode:chardata()) -> non_neg_integer().
 captcha(Input) ->
