@@ -25,11 +25,9 @@ captcha(Input) ->
 captcha([], [], Accum) ->
     Accum;
 captcha([Head1|T1], [Head2|T2], Accum) ->
-    Head1i = erlang:list_to_integer([Head1]),
-    Head2i = erlang:list_to_integer([Head2]),
     Add = Accum + 
-    case Head1i =:= Head2i of
-        true -> Head1i + Head2i;
+    case Head1 =:= Head2 of
+        true -> erlang:list_to_integer([Head1]) * 2;
         _ -> 0
     end,
     captcha(T1, T2, Add).
