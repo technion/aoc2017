@@ -6,7 +6,7 @@ def solvefive(maze)
 
   while(offset >= 0 && offset < maze.length) do
     oldoffset = maze[offset]
-    maze[offset] = oldoffset >= 3 ? oldoffset - 1 : oldoffset + 1
+    maze[offset] += oldoffset >= 3 ? - 1 :  1
     offset = offset + oldoffset
     moves = moves + 1
   end
